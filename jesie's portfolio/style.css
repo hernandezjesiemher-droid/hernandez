@@ -1,0 +1,238 @@
+/* ---------------------------------------------------GLOBAL------------------------------------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: /*linear-gradient(330deg, #000000, #111116)*/ linear-gradient(330deg, #030303, #1d1c1c);
+    --bg-secondary: linear-gradient(330deg, #32163a, #351029);
+    --textshadow: 0 5px 9px 13px rgb(255, 212, 23);
+    --text-primary: #c5882c;
+    
+    --text-secondary: #e2dfdf;
+    --text-muted: #d1c9c9;
+    --border-color: rgb(72, 28, 77);
+    --card-bg: rgb(72, 28, 77);
+    --card-bg-secondary: linear-gradient(330deg, #32163a, #351029);
+    --btn-hover-bg: linear-gradient(330deg, rgba(22, 19, 19, 0.699), rgba(5, 4, 4, 0.651));
+    --transition-speed: 0.3s;
+    --hover-bg: 0 3px 4px 10px rgba(243, 102, 161, 0.308),
+                0 2px 3px 6px rgba(238, 103, 143, 0.568),
+                0 1px 2px 3px rgba(238, 150, 184, 0.452);
+    --boxshadow: 0 1px 3px 1px rgba(22, 21, 21, 0.349);
+}
+
+body.light-mode {
+    --bg-primary: /*linear-gradient(330deg, #5cb659, #4fa087)*/ linear-gradient(330deg, #ffffff, #6c6c6e);
+    --bg-secondary: linear-gradient(330deg, #489b63, #66afda);
+    --textshadow: 0 5px 9px 13px rgb(105, 238, 231);
+    --text-primary: #FFFDD0;
+    --text-primarily: linear-gradient(330deg, #998243, #726121);
+    --text-secondary: #e2dfdf;
+    --text-muted: #e2dfdf;
+    --border-color: rgb(49, 109, 145);
+    --card-bg: rgb(49, 109, 145);
+    --card-bg-secondary: linear-gradient(330deg, #374f9e, #4f69a0);
+    --btn-hover-bg: rgba(0, 0, 0, 0.08);
+    --hover-bg: 0 4px 6px 13px rgba(74, 168, 230, 0.308),
+                0 2px 3px 6px rgba(103, 182, 235, 0.568),
+                0 1px 2px 3px rgba(103, 182, 235, 0.452);
+    --boxshadow: 0 1px 3px 1px rgba(22, 21, 21, 0.349);
+}
+
+body {
+    background: var(--bg-primary);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--text-primary);
+    transition: background-color var(--transition-speed) ease, 
+                color var(--transition-speed) ease;
+    /*font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;*/
+}
+
+/* ----------------------------------------------------SCROLLBAR------------------------------------------------------ */
+
+::-webkit-scrollbar {
+    width: 8px;
+    
+}
+
+::-webkit-scrollbar-track {
+    background: var(--card-bg-secondary);
+    
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-muted);
+    border-radius: 3px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+
+}
+
+/* ----------------------------------------------------HEAD------------------------------------------------------ */
+
+.head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    background: linear-gradient(90deg, #963bb9, #4a96d4);
+    box-shadow: 0 4px 7px 5px rgba(206, 206, 206, 0.856),
+                0 2px 4px 3px rgba(223, 222, 222, 0.822);
+}
+
+.head h1 {
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    margin-left: 10px;
+    font: small-caps bold 15px/30px Georgia, serif;
+}
+
+.btn {
+    background: transparent;
+    border: none;
+    color: rgb(255, 255, 255);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    transition: all var(--transition-speed) ease;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background: var(--btn-hover-bg);
+    transform: scale(1.01);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn i {
+    transition: transform var(--transition-speed) ease;
+}
+
+.btn:hover i {
+    transform: rotate(10deg);
+}
+
+/* --------------------------------------------------PROFILE-------------------------------------------------------- */
+
+.profile-contact-con {
+    /*background: url('greenscenery.png') no-repeat;*/
+    background: var(--card-bg-secondary);
+    
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 350px;
+}
+
+.coverprofile {
+    max-width: 600px;
+    max-height: 380px;
+    border-radius: 24px 24px 22px 22px;
+    margin-right: 10px;
+    background: var(--card-bg);
+    position: relative;
+    bottom: -100px;
+    left: -320px;
+    box-shadow: var(--boxshadow);
+    margin: 0 0 0 0;
+    transition: all var(--transition-speed) ease;
+}
+
+.coverprofile:hover {
+    box-shadow: var(--hover-bg);
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    transform: translateY(-2px);
+}
+
+.profile-cover {
+    object-fit: cover;
+    width: 600px;
+    border-radius: 22px 22px 0 0;
+    
+}
+
+.profile-pic {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    border: solid var(--border-color) 2px;
+}
+
+.textname {
+    color: var(--text-primary);
+
+}
+
+.textname h3 {  
+        /*   top    left  bottom  right*/
+    margin:  10px   10px   10px    180px;
+    font: small-caps bold 23px/17px Georgia, serif;
+    text-shadow: var(--textshadow);
+    
+}
+
+.abt {
+    margin:  13px   10px   10px    180px;
+    font: small-caps italic 12px/8px Lucida, sans-serif;
+    word-spacing: 10px;
+    font-optical-sizing: 10px;
+    text-shadow: var(--textshadow);
+}
+
+.brief-exp-abt {
+    position: absolute;
+    top: 45px;
+    right: 100px;
+    width: 500px;
+    background: rgb(61, 52, 52);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.brief-con {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: gray;
+    text-align: center;
+    
+}
+
+.bf-con {
+    font: small-caps 20px/15px recursive, sans-serif;
+    margin: 10px 0 10px 0;
+    align-self: flex-end;
+    font-size: 50px;
+    color: var(--text-primarily);
+}
+
